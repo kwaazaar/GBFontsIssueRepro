@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RuntimeIdentifiers>win-x64;linux-x64</RuntimeIdentifiers>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="fonts\UNVR55W.TTF" />
+    <None Remove="fonts\UNVR56W.TTF" />
+    <None Remove="fonts\UNVR57W.TTF" />
+    <None Remove="fonts\UNVR58W.TTF" />
+    <None Remove="fonts\UNVR65W.TTF" />
+    <None Remove="fonts\UNVR66W.TTF" />
+    <None Remove="fonts\UNVR67W.TTF" />
+    <None Remove="fonts\UNVR68W.TTF" />
+    <None Remove="Template_UniversOnly.docx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="fonts\UNVR55W.TTF" />
+    <EmbeddedResource Include="fonts\UNVR56W.TTF" />
+    <EmbeddedResource Include="fonts\UNVR57W.TTF" />
+    <EmbeddedResource Include="fonts\UNVR58W.TTF" />
+    <EmbeddedResource Include="fonts\UNVR65W.TTF" />
+    <EmbeddedResource Include="fonts\UNVR66W.TTF" />
+    <EmbeddedResource Include="fonts\UNVR67W.TTF" />
+    <EmbeddedResource Include="fonts\UNVR68W.TTF" />
+    <EmbeddedResource Include="Template_UniversOnly.docx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GemBox.Document" Version="31.0.1197" />
+  </ItemGroup>
+
+</Project>
