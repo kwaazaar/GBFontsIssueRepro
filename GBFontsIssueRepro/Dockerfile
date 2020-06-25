@@ -16,7 +16,7 @@ RUN dotnet publish "GBFontsIssueRepro.csproj" -c Release -o /app/publish
 
 FROM base AS final
 
-RUN apt-get update && apt-get install ttf-mscorefonts-installer -y
+RUN add-apt-repository multiverse && apt-get update && apt-get install ttf-mscorefonts-installer -y
 
 WORKDIR /app
 COPY --from=publish /app/publish .
