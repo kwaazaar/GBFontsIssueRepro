@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "GBFontsIssueRepro": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

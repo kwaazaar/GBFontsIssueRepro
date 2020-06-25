@@ -4,6 +4,7 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RuntimeIdentifiers>win-x64;linux-x64</RuntimeIdentifiers>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,6 +16,8 @@
     <None Remove="fonts\UNVR66W.TTF" />
     <None Remove="fonts\UNVR67W.TTF" />
     <None Remove="fonts\UNVR68W.TTF" />
+    <None Remove="Template_Calibri.docx" />
+    <None Remove="Template_Univers.docx" />
     <None Remove="Template_UniversOnly.docx" />
   </ItemGroup>
 
@@ -27,11 +30,13 @@
     <EmbeddedResource Include="fonts\UNVR66W.TTF" />
     <EmbeddedResource Include="fonts\UNVR67W.TTF" />
     <EmbeddedResource Include="fonts\UNVR68W.TTF" />
-    <EmbeddedResource Include="Template_UniversOnly.docx" />
+    <EmbeddedResource Include="Template_Calibri.docx" />
+    <EmbeddedResource Include="Template_Univers.docx" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="GemBox.Document" Version="31.0.1197" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,6 @@
 ﻿using GemBox.Document;
 using System;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 
@@ -12,14 +13,19 @@ namespace GBFontsIssueRepro
             ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
             // Fonts are embedded resources
-            FontSettings.FontsBaseResourceLocation = "/GBFontsIssueRepro;component/fonts/";
+            FontSettings.FontsBaseResourceLocation = "/fonts/";
 
-            // Load template from embedded resource also
-            var templateStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("GBFontsIssueRepro.Template_UniversOnly.docx");
+            GenerateDocument("Template_Calibri.docx");
+            GenerateDocument("Template_Univers.docx");
+        }
+
+        private static void GenerateDocument(string templateName)
+        {
+            var templateStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("GBFontsIssueRepro." + templateName);
             var doc = DocumentModel.Load(templateStream);
 
             // Save it
-            var filename = $"Output_{Guid.NewGuid().ToString()}.pdf";
+            var filename = $"Output_{templateName}_{DateTime.Now.Ticks}.pdf";
             Console.Write($"Saving {filename}...");
 
             try
