@@ -16,6 +16,7 @@
     <None Remove="fonts\UNVR66W.TTF" />
     <None Remove="fonts\UNVR67W.TTF" />
     <None Remove="fonts\UNVR68W.TTF" />
+    <None Remove="Template_Arial.docx" />
     <None Remove="Template_Calibri.docx" />
     <None Remove="Template_Univers.docx" />
     <None Remove="Template_UniversOnly.docx" />
@@ -30,6 +31,7 @@
     <EmbeddedResource Include="fonts\UNVR66W.TTF" />
     <EmbeddedResource Include="fonts\UNVR67W.TTF" />
     <EmbeddedResource Include="fonts\UNVR68W.TTF" />
+    <EmbeddedResource Include="Template_Arial.docx" />
     <EmbeddedResource Include="Template_Calibri.docx" />
     <EmbeddedResource Include="Template_Univers.docx" />
   </ItemGroup>

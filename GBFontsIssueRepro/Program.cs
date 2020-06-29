@@ -15,6 +15,7 @@ namespace GBFontsIssueRepro
             // Fonts are embedded resources
             FontSettings.FontsBaseResourceLocation = "/fonts/";
 
+            GenerateDocument("Template_Arial.docx");
             GenerateDocument("Template_Calibri.docx");
             GenerateDocument("Template_Univers.docx");
         }
