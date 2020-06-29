@@ -16,8 +16,10 @@ RUN dotnet publish "GBFontsIssueRepro.csproj" -c Release -o /app/publish
 
 FROM base AS final
 
-# Enable multiverse package sources (add-apt-repository multiverse does not work)
-RUN sed -i "/^# deb.*multiverse/ s/^# //" /etc/apt/sources.list
+# Contrib debian packages enablen (vergelijkbaar met multiverse op ubuntu)
+RUN sed -i 's/ buster main/ buster main contrib/g' /etc/apt/sources.list
+RUN sed -i 's+ buster/updates main+ buster/updates main contrib+g' /etc/apt/sources.list
+RUN sed -i 's/ buster-updates main/ buster-updates main contrib/g' /etc/apt/sources.list
 
 RUN apt-get update \
 	&& apt-get install ttf-mscorefonts-installer -y
