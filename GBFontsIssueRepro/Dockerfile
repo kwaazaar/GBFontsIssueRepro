@@ -21,8 +21,12 @@ RUN sed -i 's/ buster main/ buster main contrib/g' /etc/apt/sources.list
 RUN sed -i 's+ buster/updates main+ buster/updates main contrib+g' /etc/apt/sources.list
 RUN sed -i 's/ buster-updates main/ buster-updates main contrib/g' /etc/apt/sources.list
 
+# Install fonts
+RUN echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections
 RUN apt-get update \
-	&& apt-get install ttf-mscorefonts-installer -y
+	&& apt-get install font-config ttf-mscorefonts-installer -y
+# Update fonts cache
+RUN fc-cache -f -v
 
 WORKDIR /app
 COPY --from=publish /app/publish .
