@@ -26,7 +26,7 @@ namespace GBFontsIssueRepro
             var doc = DocumentModel.Load(templateStream);
 
             // Save it
-            var filename = $"Output_{templateName}_{DateTime.Now.Ticks}.pdf";
+            var filename = $"/app/output/Output_{templateName}_{DateTime.Now.Ticks}.pdf";
             Console.Write($"Saving {filename}...");
 
             try
