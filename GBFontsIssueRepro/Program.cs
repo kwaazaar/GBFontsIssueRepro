@@ -18,6 +18,7 @@ namespace GBFontsIssueRepro
             GenerateDocument("Template_Arial.docx");
             GenerateDocument("Template_Calibri.docx");
             GenerateDocument("Template_Univers.docx");
+            GenerateDocument("Template_All.docx");
         }
 
         private static void GenerateDocument(string templateName)

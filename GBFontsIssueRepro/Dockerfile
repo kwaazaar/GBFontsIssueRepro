@@ -30,5 +30,8 @@ RUN fc-cache -f -v
 
 WORKDIR /app
 COPY --from=publish /app/publish .
+
+# Output folder (so it can be mapped)
 RUN mkdir /app/output
+
 ENTRYPOINT ["dotnet", "GBFontsIssueRepro.dll"]
