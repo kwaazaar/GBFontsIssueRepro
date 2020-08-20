@@ -16,19 +16,27 @@ RUN dotnet publish "GBFontsIssueRepro.csproj" -c Release -o /app/publish
 
 FROM base AS final
 
-RUN echo New layer to prevent using cache
-
 # Contrib debian packages enablen (vergelijkbaar met multiverse op ubuntu)
 RUN sed -i 's/ buster main/ buster main contrib/g' /etc/apt/sources.list
 RUN sed -i 's+ buster/updates main+ buster/updates main contrib+g' /etc/apt/sources.list
 RUN sed -i 's/ buster-updates main/ buster-updates main contrib/g' /etc/apt/sources.list
 
-# Install fonts
+# Install MS core fonts
 RUN echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections
 RUN apt-get update \
 	&& apt-get install fontconfig ttf-mscorefonts-installer -y
+
+# Copy custom fonts to ms core fonts installation folder
+COPY GBFontsIssueRepro/fonts /usr/share/fonts/truetype/msttcorefonts
+
+# Add custom font config to include ms core fonts folder
+#COPY GBFontsIssueRepro/local.conf /etc/fonts
+
 # Update fonts cache
 RUN fc-cache -f -v
+
+# List available fonts
+RUN fc-list : file
 
 WORKDIR /app
 COPY --from=publish /app/publish .

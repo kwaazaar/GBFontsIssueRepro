@@ -29,10 +29,6 @@
     <None Remove="fonts\calibrili.ttf" />
     <None Remove="fonts\calibriz.ttf" />
     <None Remove="fonts\Cambria Math.ttf" />
-    <None Remove="fonts\cour.ttf" />
-    <None Remove="fonts\courbd.ttf" />
-    <None Remove="fonts\courbi.ttf" />
-    <None Remove="fonts\couri.ttf" />
     <None Remove="fonts\seguisym.ttf" />
     <None Remove="fonts\symbol.ttf" />
     <None Remove="fonts\UNVR55W.TTF" />
@@ -75,10 +71,6 @@
     <EmbeddedResource Include="fonts\calibrili.ttf" />
     <EmbeddedResource Include="fonts\calibriz.ttf" />
     <EmbeddedResource Include="fonts\Cambria Math.ttf" />
-    <EmbeddedResource Include="fonts\cour.ttf" />
-    <EmbeddedResource Include="fonts\courbd.ttf" />
-    <EmbeddedResource Include="fonts\courbi.ttf" />
-    <EmbeddedResource Include="fonts\couri.ttf" />
     <EmbeddedResource Include="fonts\seguisym.ttf" />
     <EmbeddedResource Include="fonts\symbol.ttf" />
     <EmbeddedResource Include="fonts\UNVR55W.TTF" />
@@ -93,13 +85,10 @@
     <EmbeddedResource Include="fonts\WINGDNG2.TTF" />
     <EmbeddedResource Include="fonts\WINGDNG3.TTF" />
     <EmbeddedResource Include="Template_All.docx" />
-    <EmbeddedResource Include="Template_Arial.docx" />
-    <EmbeddedResource Include="Template_Calibri.docx" />
-    <EmbeddedResource Include="Template_Univers.docx" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="GemBox.Document" Version="31.0.1197" />
+    <PackageReference Include="Gembox.Document" Version="[31.0.1241-hotfix]" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
   </ItemGroup>
 

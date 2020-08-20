@@ -13,11 +13,11 @@ namespace GBFontsIssueRepro
             ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
             // Fonts are embedded resources
-            FontSettings.FontsBaseResourceLocation = "/fonts/";
+            // FontSettings.FontsBaseResourceLocation = "/fonts/";
 
-            GenerateDocument("Template_Arial.docx");
-            GenerateDocument("Template_Calibri.docx");
-            GenerateDocument("Template_Univers.docx");
+            // MS Core Fonts (custom fonts are added to this same folder)
+            FontSettings.FontsBaseDirectory = "/usr/share/fonts/truetype/msttcorefonts";
+
             GenerateDocument("Template_All.docx");
         }
 
