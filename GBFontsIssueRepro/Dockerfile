@@ -16,6 +16,8 @@ RUN dotnet publish "GBFontsIssueRepro.csproj" -c Release -o /app/publish
 
 FROM base AS final
 
+RUN echo New layer to prevent using cache
+
 # Contrib debian packages enablen (vergelijkbaar met multiverse op ubuntu)
 RUN sed -i 's/ buster main/ buster main contrib/g' /etc/apt/sources.list
 RUN sed -i 's+ buster/updates main+ buster/updates main contrib+g' /etc/apt/sources.list
