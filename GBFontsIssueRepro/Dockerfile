@@ -27,7 +27,7 @@ RUN apt-get update \
 	&& apt-get install fontconfig ttf-mscorefonts-installer -y
 
 # Copy custom fonts to ms core fonts installation folder
-COPY GBFontsIssueRepro/fonts /usr/share/fonts/truetype/msttcorefonts
+#COPY GBFontsIssueRepro/fonts /usr/share/fonts/truetype/msttcorefonts
 
 # Add custom font config to include ms core fonts folder
 #COPY GBFontsIssueRepro/local.conf /etc/fonts

@@ -13,10 +13,13 @@ namespace GBFontsIssueRepro
             ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
             // Fonts are embedded resources
-            // FontSettings.FontsBaseResourceLocation = "/fonts/";
+            FontSettings.FontsBaseResourceLocation = "/fonts/";
 
             // MS Core Fonts (custom fonts are added to this same folder)
-            FontSettings.FontsBaseDirectory = "/usr/share/fonts/truetype/msttcorefonts";
+            // FontSettings.FontsBaseDirectory = "/usr/share/fonts/truetype/msttcorefonts";
+
+            var fontFiles = FontSettings.Fonts.Select(ff => ff.FamilyName + ", Italic: " + ff.Italic + ", Weight: " + ff.Weight + ", Stretch: " + ff.Stretch).ToArray();
+            File.WriteAllLines("/app/output/FontFiles.txt", fontFiles);
 
             GenerateDocument("Template_All.docx");
         }
